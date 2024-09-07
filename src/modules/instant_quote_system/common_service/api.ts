@@ -11,7 +11,7 @@ export function sendRequestToServer(end_point: string,method: string,data?: any)
         return axios({
             method: method,
             url: `${import.meta.env.VITE_APP_BACKEND_URL}${end_point}`,
-            data: JSON.stringify(data),
+            data: JSON.stringify(body),
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
