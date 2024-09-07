@@ -7,7 +7,7 @@ type Props = {
     handleServiceSelection: (id: string) => void
 }
 
-const ServiceCard = ({id,service_image_url,service_title,isSelected,handleServiceSelection}: Props) => {
+const ServiceCard = ({ id, service_image_url, service_title, isSelected, handleServiceSelection }: Props) => {
     return (
         <div onClick={() => handleServiceSelection(id)} className="w-20 col-span-1 cursor-pointer">
             <div className={`w-24 h-24 p-1 border rounded ${isSelected ? 'bg-green-500 border-4 border-gray-500' : 'bg-transparent'}`}>

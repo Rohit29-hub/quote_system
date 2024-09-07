@@ -49,7 +49,17 @@ const userAnswerSlice = createSlice({
             if (state.question_answers === null) {
                 state.question_answers = [action.payload];
             } else {
-                state.question_answers.push(action.payload);
+                const index = state.question_answers.findIndex(
+                    answer => answer.question_id === action.payload.question_id
+                );
+
+                if (index === -1) {
+                    // If it does not exist, add the new answer
+                    state.question_answers.push(action.payload);
+                } else {
+                    // If it exists, update the existing answer
+                    state.question_answers[index] = action.payload;
+                }
             }
         },
         addUsersInfo: (state, action: PayloadAction<userType>) => {

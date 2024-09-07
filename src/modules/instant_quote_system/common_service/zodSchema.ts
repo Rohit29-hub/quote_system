@@ -31,21 +31,21 @@ export const aboutProjectSchema = z.object({
 
 // User form schema or validation
 export const formSchema = z.object({
-    firstName: z.string().nonempty("First Name is required"),
-    lastName: z.string().nonempty("Last Name is required"),
-    streetAddress: z.string().nonempty("Street Address is required"),
+    firstname: z.string().nonempty("First Name is required"),
+    lastname: z.string().nonempty("Last Name is required"),
+    address: z.string().nonempty("Street Address is required"),
     city: z.string().nonempty("City is required"),
-    companyName: z.string().optional(),
-    zipcode: z
+    company_name: z.string().optional(),
+    zip_code: z
         .string()
         .regex(/^[0-9]{6}$/, "Zipcode must be a 6-digit number")
         .nonempty("Zipcode is required"),
-    primaryPhone: z
+    primary_phone: z
         .string()
         .regex(/^[0-9]{10}$/, "Primary Phone must be a 10-digit number")
         .nonempty("Primary Phone is required"),
-    alternatePhone: z.string().optional(),
-    emailAddress: z.string().email("Invalid email address").nonempty("Email Address is required"),
+    alternate_phone: z.string().optional(),
+    email: z.string().email("Invalid email address").nonempty("Email Address is required"),
 });
 
 

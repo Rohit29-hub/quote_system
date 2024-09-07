@@ -8,12 +8,13 @@ const QuoteInputBox = () => {
     const [message,setMessage] = useState("");
     const dispatch = useDispatch<AppDispatch>();
 
+    // Taking additional quote to the user
     const handleQuoteGenerate = () => {
         if(message.trim() == ""){
             alert('Please provide a addition quote');
         }else{
-            dispatch(addAdditionalMessage(message))
-            dispatch(incrementStep());
+            dispatch(addAdditionalMessage(message)) // add them into the state
+            dispatch(incrementStep()); // increment the step
         }
     }
     return (

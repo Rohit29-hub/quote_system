@@ -32,9 +32,9 @@ const UserForm = () => {
             {/* form components */}
             <FormProvider {...methods}>
                 <form className='w-full h-auto grid grid-cols-2 gap-4 p-4'>
-                    <InputField name="firstName" placeholder="First Name *" />
-                    <InputField name="lastName" placeholder="Last Name *" />
-                    <InputField name="streetAddress" placeholder="Street Address *" />
+                    <InputField name="firstname" placeholder="First Name *" />
+                    <InputField name="lastname" placeholder="Last Name *" />
+                    <InputField name="address" placeholder="Street Address *" />
                     <InputField
                         name="city"
                         placeholder="City, State *"
@@ -57,11 +57,11 @@ const UserForm = () => {
                             { value: 'JH', label: 'Jharkhand' },
                         ]}
                     />
-                    <InputField name="companyName" placeholder="Company Name" />
-                    <InputField name="zipcode" placeholder="Zipcode *" />
-                    <InputField name="primaryPhone" placeholder="Primary Phone *" />
-                    <InputField name="alternatePhone" placeholder="Alternate Phone" />
-                    <InputField name="emailAddress" placeholder="Email Address *" type="email" />
+                    <InputField name="company_name" placeholder="Company Name" />
+                    <InputField name="zip_code" placeholder="Zipcode *" />
+                    <InputField name="primary_phone" placeholder="Primary Phone *" />
+                    <InputField name="alternate_phone" placeholder="Alternate Phone" />
+                    <InputField name="email" placeholder="Email Address *" type="email" />
                 </form>
             </FormProvider>
 

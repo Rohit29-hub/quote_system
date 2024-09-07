@@ -3,6 +3,7 @@ export type userType = {
     lastname: string,
     address: string,
     company_name?: string,
+    city?: string,
     zip_code: string,
     primary_phone: string,
     alternate_phone?:string,
