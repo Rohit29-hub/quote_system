@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { sendRequestToServer } from "../../common_service/api";
 import { questionDataInitialState, questionType } from "../../types/service";
-import { answerType } from "../../types/usertype";
 
 type ArgsType = {
     endpoint: string,
@@ -54,7 +53,7 @@ const questionsSlice = createSlice({
 
                         if (nextQuestionData) {
                             state.current_question = nextQuestionData;
-                            state.next_questions_stack.push(nextQuestionId); // Track the nested question stack
+                            state.next_questions_stack.push(nextQuestionId as never); // Track the nested question stack
                         }
                     }
                 }

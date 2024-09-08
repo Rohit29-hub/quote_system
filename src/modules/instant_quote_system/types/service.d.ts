@@ -18,6 +18,7 @@ export type questionType = {
     question_service_type: string,
     question_answer_type: string,
     next_question_id?: string,
+    depends_on_question_id?: string,
     question_image?: string,
     question_description?: string,
     next_questions: questionType[],
