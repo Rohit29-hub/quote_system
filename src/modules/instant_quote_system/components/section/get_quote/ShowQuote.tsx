@@ -18,7 +18,7 @@ const ShowQuote = () => {
         user_info, // user_information
         question_answers, // questions's answer
         aboutProjectData, // user project info like home size, company,comapany size
-        endpoint: '/service/v1/get_quotes' // api endpoint
+        endpoint: '/quote/v1/get_quotes' // api endpoint
       }))
     }
   }, [])

@@ -95,7 +95,7 @@ const QuestionComponent = () => {
             </div>
 
             {/* button navigation */}
-            <div className="w-full  shrink-0  md:absolute relative sm:bottom-2 h-16  flex items-center px-4">
+            <div className="w-full shrink-0 mt-5 relative sm:bottom-2 h-16  flex items-center px-4">
                 <button onClick={handlePrevious} className={`bg-active_stepbar_color absolute left-2 cursor-pointer text-white px-6 py-1.5 rounded-md`}>Back</button>
                 <button onClick={handleNext} className={`absolute right-2 bg-active_stepbar_color cursor-pointer text-white px-6 py-1.5 rounded-md`}>Next</button>
             </div>

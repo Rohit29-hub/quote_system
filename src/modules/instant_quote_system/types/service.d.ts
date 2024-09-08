@@ -20,13 +20,12 @@ export type questionType = {
     next_question_id?: string,
     question_image?: string,
     question_description?: string,
+    next_questions: questionType[],
     question_options: {
         question_value: number | string,
         question_label: string,
         question_image?: string
     }[],
-    min_quantity: number,
-    max_quantity: number,
 }
 
 
@@ -36,5 +35,6 @@ export type questionDataInitialState = {
     current_question: questionType | null,
     question_step_count: number,
     isLoading: boolean,
+    next_questions_stack: [],
     error: any | null
 }

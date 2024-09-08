@@ -41,7 +41,7 @@ const Services = () => {
             alert('Please select a service for quote.')
         } else {
             const params = {
-                endpoint: '/service/v1/get_questions', // api endpoint
+                endpoint: '/question/v1/get_questions', // api endpoint
                 data: selectedServices  // passing selectedService ids array 
             }
             dispatch(fetchQuestions(params)); // Call the fetchQuestions asyncThunk
