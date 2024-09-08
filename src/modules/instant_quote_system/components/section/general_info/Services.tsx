@@ -64,7 +64,7 @@ const Services = () => {
                 {/* heading component that show the current tab or section */}
                 <TopHeading title="Select the services that you are interested in:" />
                 {/* showing all the services */}
-                <div className="w-full flex-1 overflow-y-auto md:overflow-hidden grid grid-cols-3 sm:grid-cols-4 sm:grid-rows-3 md:grid-cols-6 md:gird-rows-2 gap-4">
+                <div className="w-full flex-1 overflow-y-auto md:overflow-hidden grid grid-cols-3 sm:grid-cols-4 sm:grid-rows-3 md:grid-cols-5 md:gird-rows-3 gap-4">
                     {
                         services_data && services_data.map((item: serviceDataType) => (
                             // service card [basically using seprate component and passing props]

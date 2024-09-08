@@ -79,7 +79,7 @@ const QuestionComponent = () => {
 
     return (
         <div className="w-full h-full flex flex-col relative items-center justify-between">
-            <div className="w-full grid sm:grid-cols-1 sm:grid-rows-2">
+            <div className="w-full flex-1 grid sm:grid-cols-1 sm:grid-rows-2">
                 {/* question */}
                 <div className="w-full h-auto py-2.5 bg-[#d9edf7] flex flex-col items-center justify-center">
                     {current_question?.question_image && <img className="w-44 h-22" src={current_question.question_image} alt="" />}
@@ -95,7 +95,7 @@ const QuestionComponent = () => {
             </div>
 
             {/* button navigation */}
-            <div className="w-full shrink-0 absolute bottom-10 h-16 bg-[#f5f5f5] flex items-center px-4">
+            <div className="w-full  shrink-0  md:absolute relative sm:bottom-2 h-16  flex items-center px-4">
                 <button onClick={handlePrevious} className={`bg-active_stepbar_color absolute left-2 cursor-pointer text-white px-6 py-1.5 rounded-md`}>Back</button>
                 <button onClick={handleNext} className={`absolute right-2 bg-active_stepbar_color cursor-pointer text-white px-6 py-1.5 rounded-md`}>Next</button>
             </div>
