@@ -39,7 +39,7 @@ const Services = () => {
     const handleNext = () => {
         if (selectedServices.length == 0) { // if user not selected any service.
             alert('Please select a service for quote.')
-        }else{
+        } else {
             const params = {
                 endpoint: '/service/v1/get_questions', // api endpoint
                 data: selectedServices  // passing selectedService ids array 
@@ -60,11 +60,11 @@ const Services = () => {
 
     return (
         <>
-            <div className="w-full h-full flex flex-col items-center py-3 justify-start gap-y-5">
+            <div className="w-full h-full relative px-1 flex flex-col items-center py-3 justify-between gap-y-5">
                 {/* heading component that show the current tab or section */}
                 <TopHeading title="Select the services that you are interested in:" />
                 {/* showing all the services */}
-                <div className="w-full h-auto grid grid-cols-6 gird-rows-2 gap-4">
+                <div className="w-full flex-1 overflow-y-auto md:overflow-hidden grid grid-cols-3 sm:grid-cols-4 sm:grid-rows-3 md:grid-cols-6 md:gird-rows-2 gap-4">
                     {
                         services_data && services_data.map((item: serviceDataType) => (
                             // service card [basically using seprate component and passing props]
@@ -80,7 +80,7 @@ const Services = () => {
                         ))
                     }
                 </div>
-                <div className="w-full absolute bottom-2 h-16 bg-[#f5f5f5] flex items-center px-4">
+                <div className="w-full mb-10 md:mb-0 md:absolute relative sm:bottom-2 h-16  flex items-center px-4">
                     <button onClick={handleNext} disabled={isLoading} className="absolute right-2 bg-active_stepbar_color cursor-pointer text-white px-6 py-1.5 rounded-md">Next</button>
                 </div>
             </div>
