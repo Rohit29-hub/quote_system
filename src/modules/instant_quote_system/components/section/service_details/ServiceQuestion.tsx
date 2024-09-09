@@ -61,8 +61,7 @@ const QuestionComponent = () => {
          * so change the change the question.
          * otherwise change the component.
          */
-
-        if (question_step_count < total_question_length - 1) {
+        if (question_step_count < total_question_length - 1 ) {
             // if user not filled up the answer so show them alert.
             if (!isEmpty(answers)) {
                 await dispatch(addQuestionAnswer(answers)); // add question_answer in question_answer slice

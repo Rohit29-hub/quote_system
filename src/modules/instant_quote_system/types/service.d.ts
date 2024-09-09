@@ -33,9 +33,10 @@ export type questionType = {
 export type questionDataInitialState = {
     questions_data: questionType[] | [],
     total_question_length: number,
+    question_history: questionType[],
     current_question: questionType | null,
     question_step_count: number,
     isLoading: boolean,
-    next_questions_stack: [],
+    dependent_questions_data: questionType[],
     error: any | null
 }
