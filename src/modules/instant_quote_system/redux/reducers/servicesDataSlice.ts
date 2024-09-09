@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { sendRequestToServer } from "../../common_service/api";
 import { serviceDataInitialState, serviceDataType } from "../../types/service";
 
+// fetch services 
 export const fetchServiceData = createAsyncThunk('servicesData/fetch', async (endpoint: string, { rejectWithValue }) => {
     try {
         const data = await sendRequestToServer(endpoint, "GET");

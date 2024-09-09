@@ -1,9 +1,4 @@
-import { questionType } from '../../types/service';
-
-interface ImageQuantityInputFieldProps {
-    current_question: questionType;
-    setAnswer: (answer: string, questionId: string, serviceId: string, questionType: string, questionText: string, question_type: string,question_label: string) => void;
-}
+import { ImageQuantityInputFieldProps } from '../../types/service';
 
 const ImageQuantityInputField = ({ current_question, setAnswer }: ImageQuantityInputFieldProps) => {
     return (

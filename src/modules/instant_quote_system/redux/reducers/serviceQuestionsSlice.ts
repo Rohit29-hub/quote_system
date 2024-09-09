@@ -89,5 +89,9 @@ const questionsSlice = createSlice({
     }
 })
 
-export const { previousQuestion, nextQuestion } = questionsSlice.actions;
+export const { 
+    previousQuestion,
+    nextQuestion 
+} = questionsSlice.actions;
+
 export default questionsSlice.reducer;

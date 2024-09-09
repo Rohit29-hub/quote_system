@@ -1,13 +1,6 @@
-type Props = {
-    id: string
-    service_image_url: string,
-    service_title: string,
-    service_type_is_home: boolean,
-    isSelected: boolean,
-    handleServiceSelection: (id: string) => void
-}
+import { ServiceCardProps } from "../../types/service"
 
-const ServiceCard = ({ id, service_image_url, service_title, isSelected, handleServiceSelection }: Props) => {
+const ServiceCard = ({ id, service_image_url, service_title, isSelected, handleServiceSelection }: ServiceCardProps) => {
     return (
         <div onClick={() => handleServiceSelection(id)} className="w-auto flex flex-col items-center col-span-1 cursor-pointer">
             <div className={`w-24 h-24 p-1 border rounded ${isSelected ? 'bg-green-500 border-4 border-gray-500' : 'bg-transparent'}`}>

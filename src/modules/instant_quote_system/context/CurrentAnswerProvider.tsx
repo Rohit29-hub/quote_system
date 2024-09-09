@@ -1,24 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { answerType } from '../types/usertype';
-
-// The type of the context
-interface AnswerContextType {
-    answers: answerType;
-    handleSetQuestionAnswer: (
-        answer: string | {
-            question_label: string,
-            question_ans: string
-        }[],
-        question_id: string,
-        service_id: string,
-        service_name: string,
-        question_text: string,
-        question_type: string,
-        question_label: string
-    ) => void;
-    error: boolean;
-    setAnswerObjToNull: () => void;
-}
+import { AnswerContextType } from '../types/service';
 
 const AnswerContext = createContext<AnswerContextType | undefined>(undefined);
 
@@ -112,6 +93,7 @@ export const CurrentAnswerProvider = ({ children }: { children: ReactNode }) => 
         </AnswerContext.Provider>
     );
 };
+
 
 export const useAnswerContext = () => {
     const context = useContext(AnswerContext);

@@ -1,9 +1,4 @@
-import { questionType } from '../../types/service';
-
-interface RadioFieldsProps {
-    current_question: questionType,
-    setAnswer: (answer: string, questionId: string, serviceId: string, questionType: string, questionText: string, question_type: string, question_label: string) => void;
-}
+import { RadioFieldsProps } from "../../types/service";
 
 const RadioInputField = ({ current_question, setAnswer }: RadioFieldsProps) => {
     return (

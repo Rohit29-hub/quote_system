@@ -40,3 +40,49 @@ export type questionDataInitialState = {
     dependent_questions_data: questionType[],
     error: any | null
 }
+
+
+export type ImageQuantityInputFieldProps = {
+    current_question: questionType;
+    setAnswer: (answer: string, questionId: string, serviceId: string, questionType: string, questionText: string, question_type: string,question_label: string) => void;
+}
+
+
+export type RadioFieldsProps = {
+    current_question: questionType,
+    setAnswer: (answer: string, questionId: string, serviceId: string, questionType: string, questionText: string, question_type: string, question_label: string) => void;
+}
+
+
+export type SelectInputFieldProps = {
+    current_question: questionType;
+    setAnswer: (answer: string, questionId: string, serviceId: string, questionType: string, questionText: string, question_type: string, question_label: string) => void;
+}
+
+
+export type ServiceCardProps = {
+    id: string
+    service_image_url: string,
+    service_title: string,
+    service_type_is_home: boolean,
+    isSelected: boolean,
+    handleServiceSelection: (id: string) => void
+}
+
+export type AnswerContextType = {
+    answers: answerType;
+    handleSetQuestionAnswer: (
+        answer: string | {
+            question_label: string,
+            question_ans: string
+        }[],
+        question_id: string,
+        service_id: string,
+        service_name: string,
+        question_text: string,
+        question_type: string,
+        question_label: string
+    ) => void;
+    error: boolean;
+    setAnswerObjToNull: () => void;
+}

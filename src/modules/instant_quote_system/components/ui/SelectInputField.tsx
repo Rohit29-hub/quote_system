@@ -1,11 +1,6 @@
-import { questionType } from '../../types/service';
+import { SelectInputFieldProps } from "../../types/service";
 
-interface SelectInputFieldProps {
-    current_question: questionType;
-    setAnswer: (answer: string, questionId: string, serviceId: string, questionType: string, questionText: string, question_type: string, question_label: string) => void;
-}
-
-const SelectInputField = ({ current_question, setAnswer }:SelectInputFieldProps) => {
+const SelectInputField = ({ current_question, setAnswer }: SelectInputFieldProps) => {
     return (
         <>  
             <select

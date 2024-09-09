@@ -3,13 +3,9 @@ import { z } from 'zod';
 // About project schema
 export const aboutProjectSchema = z.object({
     hear_about_us: z.string().nonempty("Where did you hear about us?"),
-
     project_type: z.string().nonempty("Please select a project type"),
-
     company_name: z.string().optional(),
-
     building_size: z.string().optional(),
-
     selected_home: z.string().optional()
 }).refine((data) => {
     if (data.project_type === 'Commercial') {
@@ -36,14 +32,8 @@ export const formSchema = z.object({
     address: z.string().nonempty("Street Address is required"),
     city: z.string().nonempty("City is required"),
     company_name: z.string().optional(),
-    zip_code: z
-        .string()
-        .regex(/^[0-9]{6}$/, "Zipcode must be a 6-digit number")
-        .nonempty("Zipcode is required"),
-    primary_phone: z
-        .string()
-        .regex(/^[0-9]{10}$/, "Primary Phone must be a 10-digit number")
-        .nonempty("Primary Phone is required"),
+    zip_code: z.string().regex(/^[0-9]{6}$/, "Zipcode must be a 6-digit number").nonempty("Zipcode is required"),
+    primary_phone: z.string().regex(/^[0-9]{10}$/, "Primary Phone must be a 10-digit number").nonempty("Primary Phone is required"),
     alternate_phone: z.string().optional(),
     email: z.string().email("Invalid email address").nonempty("Email Address is required"),
 });

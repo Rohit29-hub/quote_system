@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { aboutProjectType, answerDataInitialStateType, argsDataType, userType } from "../../types/usertype";
 import { sendRequestToServer } from "../../common_service/api";
 
+// fetch service's quote
 export const fetchInstantQuote = createAsyncThunk('fetchInstantQuote/fetch', async (data: argsDataType, { rejectWithValue }) => {
     try {
         const res = await sendRequestToServer(data.endpoint, "POST", data);
