@@ -24,7 +24,7 @@ const QuestionComponent = () => {
      *  total_question_length:- total_question that we need to ask the user [additon of all the services quesion]
     */
 
-    const { current_question, question_step_count, total_question_length } = useSelector((state: RootState) => state.instant_quote.questions);
+    const { current_question, question_step_count, total_question_length, question_history } = useSelector((state: RootState) => state.instant_quote.questions);
 
     // This function determine the component for user to select their answer
     const determineAnswerComp = (question_answer_type: string) => {
@@ -44,8 +44,9 @@ const QuestionComponent = () => {
      * component.
      * 
     */
+   
     const handlePrevious = () => {
-        if (question_step_count == 0) {
+        if (question_step_count == 0 && question_history.length == 0) {
             // change the component
             dispatch(decrementStep());
         } else {
@@ -61,7 +62,7 @@ const QuestionComponent = () => {
          * so change the change the question.
          * otherwise change the component.
          */
-        if (question_step_count < total_question_length - 1 ) {
+        if (question_step_count < total_question_length - 1) {
             // if user not filled up the answer so show them alert.
             if (!isEmpty(answers)) {
                 await dispatch(addQuestionAnswer(answers)); // add question_answer in question_answer slice

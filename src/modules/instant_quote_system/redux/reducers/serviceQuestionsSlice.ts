@@ -34,22 +34,27 @@ const questionsSlice = createSlice({
     initialState,
     reducers: {
         previousQuestion: (state) => {
-            
+            console.log(current(state.question_history));
+            if (!state.current_question?.depends_on_question_id) {
+                state.question_step_count -= 1;
+            }
+            state.current_question = state.question_history.pop()!;
         },
         nextQuestion: (state, action: PayloadAction<any>) => {
-            const {answer, question_type } = action.payload;
+            const { answer, question_type } = action.payload;
             state.question_history.push(state.current_question!);
 
-            if(question_type == "radio" && answer == "Yes"){
+            if (question_type == "radio" && answer == "Yes") {
                 state.dependent_questions_data = [...state.current_question!.next_questions];
             }
 
             if (state.dependent_questions_data.length > 0) {
-                if(state.dependent_questions_data.length > 0){
+                if (state.dependent_questions_data.length > 0) {
                     state.current_question = state.dependent_questions_data.shift()!;
                 }
             } else {
                 state.question_step_count += 1;
+                console.log("CLICK_NEXT: ",state.question_step_count);
                 if (state.question_step_count < state.questions_data.length) {
                     state.current_question = state.questions_data[state.question_step_count];
                 } else {
