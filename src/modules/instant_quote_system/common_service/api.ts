@@ -1,5 +1,5 @@
 import axios from "axios";
-//https://quote-system-backend.onrender.com
+
 export function sendRequestToServer(end_point: string,method: string,data?: any) {
     try {
         let body = {};
@@ -10,7 +10,7 @@ export function sendRequestToServer(end_point: string,method: string,data?: any)
 
         return axios({
             method: method,
-            url: `${"http://localhost:8000"}${end_point}`,
+            url: `${"https://quote-system-backend.onrender.com"}${end_point}`,
             data: JSON.stringify(body),
             headers: {
                 Accept: 'application/json',
